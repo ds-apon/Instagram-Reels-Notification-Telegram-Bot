@@ -55,17 +55,26 @@ def save_usernames(usernames):
 
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    user = update.effective_user.first_name
+
     text = (
-        "🔥 Instagram Reel Monitor Bot Started"
-        "Commands:"
-        "/add username"
-        "/remove username"
-        "/list"
-        "/status"
+        f"🔥 Welcome {user}!\n\n"
+        f"🎬 Instagram Reel Monitor Bot\n\n"
+        f"✅ Features:\n"
+        f"• Reel upload instant alerts\n"
+        f"• Multi account monitoring\n"
+        f"• Thumbnail preview\n"
+        f"• Fast notifications\n\n"
+        f"📌 Commands:\n"
+        f"/add username\n"
+        f"/remove username\n"
+        f"/list\n"
+        f"/status\n\n"
+        f"🚀 Example:\n"
+        f"/add cristiano"
     )
 
     await update.message.reply_text(text)
-
 
 async def add_username(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not context.args:
