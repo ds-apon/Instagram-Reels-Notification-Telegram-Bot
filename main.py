@@ -146,7 +146,10 @@ async def send_notification(username, shortcode):
         f"🎬 Reel Link:\n{reel_url}"
     )
 
-    await app.bot.send_message(chat_id=CHAT_ID, text=text)
+    await app.bot.send_message(
+        chat_id=CHAT_ID,
+        text=text
+    )
 
 
 async def check_reels():
