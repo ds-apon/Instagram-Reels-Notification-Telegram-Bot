@@ -46,8 +46,7 @@ def load_usernames():
 def save_usernames(usernames):
     with open("usernames.txt", "w", encoding="utf-8") as f:
         for username in usernames:
-            f.write(username + "
-")
+            f.write(username + "\n")
 
 
 # =========================
