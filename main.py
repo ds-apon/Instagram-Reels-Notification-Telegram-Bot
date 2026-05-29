@@ -112,13 +112,10 @@ async def list_usernames(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await update.message.reply_text("No usernames added")
         return
 
-    text = "📋 Monitoring Accounts:
-
-"
+    text = "📋 Monitoring Accounts:"
 
     for user in usernames:
-        text += f"• @{user}
-"
+        text += f"• @{user}"
 
     await update.message.reply_text(text)
 
@@ -127,11 +124,8 @@ async def status(update: Update, context: ContextTypes.DEFAULT_TYPE):
     usernames = load_usernames()
 
     text = (
-        "🤖 Bot Running Successfully
-
-"
-        f"👥 Total Accounts: {len(usernames)}
-"
+        "🤖 Bot Running Successfully"
+        f"👥 Total Accounts: {len(usernames)}"
         f"⏱ Check Interval: {CHECK_INTERVAL} sec"
     )
 
@@ -147,11 +141,8 @@ async def send_notification(username, shortcode):
     reel_url = f"https://www.instagram.com/reel/{shortcode}/"
 
     text = (
-        f"🔥 New Reel Uploaded
-
-"
-        f"👤 Username: @{username}
-"
+        f"🔥 New Reel Uploaded"
+        f"👤 Username: @{username}"
         f"🎬 Reel Link:
 {reel_url}"
     )
