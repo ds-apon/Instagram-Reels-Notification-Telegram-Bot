@@ -143,8 +143,7 @@ async def send_notification(username, shortcode):
     text = (
         f"🔥 New Reel Uploaded"
         f"👤 Username: @{username}"
-        f"🎬 Reel Link:
-{reel_url}"
+        f"🎬 Reel Link:{reel_url}"
     )
 
     await app.bot.send_message(chat_id=CHAT_ID, text=text)
