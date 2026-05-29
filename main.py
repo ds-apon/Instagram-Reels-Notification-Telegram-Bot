@@ -26,6 +26,8 @@ L = instaloader.Instaloader(
     compress_json=False,
 )
 
+L.context.max_connection_attempts = 1
+
 sent_reels = set()
 
 
@@ -168,9 +170,12 @@ async def check_reels():
         for username in usernames:
             try:
                 profile = instaloader.Profile.from_username(
-                    L.context,
-                    username,
-                )
+                L.context,
+                username,
+            )
+            except Exception as e:
+                print(f"Instagram rate limit: {e}")
+                continue
 
                 for post in profile.get_posts():
                     if (
