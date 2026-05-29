@@ -56,17 +56,11 @@ def save_usernames(usernames):
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     text = (
-        "🔥 Instagram Reel Monitor Bot Started
-
-"
-        "Commands:
-"
-        "/add username
-"
-        "/remove username
-"
-        "/list
-"
+        "🔥 Instagram Reel Monitor Bot Started"
+        "Commands:"
+        "/add username"
+        "/remove username"
+        "/list"
         "/status"
     )
 
